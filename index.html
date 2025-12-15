@@ -235,15 +235,79 @@
         <p
           class="uppercase animate-on-scroll animate text-xs font-medium text-white/40 tracking-widest text-center mb-8">
           Betrodd av en utvald krets snabbväxande grundare</p>
-        <div
-          class="grid grid-cols-2 md:grid-cols-6 gap-8 items-center justify-items-center opacity-60 transition-all duration-500 hover:opacity-100 animate-on-scroll [animation-delay:200ms] animate">
-          <span class="text-white/40 font-medium text-sm tracking-tight">TechStart AB</span>
-          <span class="text-white/40 font-medium text-sm tracking-tight">NordicFlow</span>
-          <span class="text-white/40 font-medium text-sm tracking-tight">ScaleUp Partners</span>
-          <span class="text-white/40 font-medium text-sm tracking-tight">DataDriven</span>
-          <span class="text-white/40 font-medium text-sm tracking-tight">GrowthLab</span>
-          <span class="text-white/40 font-medium text-sm tracking-tight">VentureX</span>
+        <!-- Marquee Container -->
+        <div class="relative flex overflow-x-hidden group">
+          <!-- Gradient Masks -->
+          <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+          <!-- Scrolling Content (Doubled for seamless loop) -->
+          <div class="animate-marquee whitespace-nowrap flex items-center gap-16 py-4">
+            <!-- Set 1 -->
+            <img src="logo-openai.png" alt="OpenAI"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-gemini.png" alt="Gemini"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-claude.png" alt="Claude"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-highlevel.png" alt="HighLevel"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-instantly.png" alt="Instantly"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+
+            <!-- Set 2 -->
+            <img src="logo-openai.png" alt="OpenAI"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-gemini.png" alt="Gemini"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-claude.png" alt="Claude"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-highlevel.png" alt="HighLevel"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-instantly.png" alt="Instantly"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+
+            <!-- Set 3 (Extra buffer for wide screens) -->
+            <img src="logo-openai.png" alt="OpenAI"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-gemini.png" alt="Gemini"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-claude.png" alt="Claude"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-highlevel.png" alt="HighLevel"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+            <img src="logo-instantly.png" alt="Instantly"
+              class="h-8 w-auto opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0">
+          </div>
+
+          <div class="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-16 py-4">
+            <!-- Duplicate structure for seamless absolute positioning if needed, but the simple infinite scroll usually works with just one long flex track if configured correctly. 
+               However, standard tailwind 'animate-marquee' isn't built-in. I need to add the keyframes. 
+               Let's rely on standard scrolling logic: a long track moving left. 
+               Actually, I will just use a single track for now but since I can't easily edit tailwind config, I will add the keyframes to the style tag in head.
+               -->
+          </div>
         </div>
+        <style>
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+
+            100% {
+              transform: translateX(calc(-100% / 3));
+            }
+          }
+
+          .animate-marquee {
+            animation: marquee 30s linear infinite;
+          }
+
+          /* Pause on hover */
+          .group:hover .animate-marquee {
+            animation-play-state: paused;
+          }
+        </style>
       </div>
     </section>
 
