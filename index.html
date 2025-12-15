@@ -107,6 +107,9 @@
   </script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 
 <body class="antialiased selection:bg-emerald-900 selection:text-white overflow-x-hidden text-white bg-black h-full">
@@ -144,7 +147,8 @@
               class="px-4 py-1.5 text-xs font-normal text-white/70 hover:text-white transition-colors">Ekosystem</a>
             <a href="#pricing"
               class="px-4 py-1.5 text-xs font-normal text-white/70 hover:text-white transition-colors">Investering</a>
-            <a href="#application"
+            <a href="#"
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/stefan-245/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=12b981'});return false;"
               class="ml-1 relative inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 text-xs font-medium text-black transition-transform hover:scale-105 active:scale-95">
               <span>Ansök Nu</span>
             </a>
@@ -166,7 +170,8 @@
               <a href="#manifesto" class="text-sm text-white/70 hover:text-white transition-colors">Filosofi</a>
               <a href="#ecosystem" class="text-sm text-white/70 hover:text-white transition-colors">Ekosystem</a>
               <a href="#pricing" class="text-sm text-white/70 hover:text-white transition-colors">Investering</a>
-              <a href="#application"
+              <a href="#"
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/stefan-245/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=12b981'});return false;"
                 class="inline-flex items-center justify-center rounded-full bg-white px-4 py-2 text-sm font-medium text-black mt-2">Ansök
                 Nu</a>
             </nav>
@@ -199,7 +204,8 @@
 
         <div
           class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-on-scroll [animation-delay:300ms] animate">
-          <a href="#application"
+          <a href="#"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/stefan-245/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=12b981'});return false;"
             class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-white px-8 font-medium text-black transition-all hover:bg-sky-200 hover:scale-105 active:scale-95 w-full sm:w-auto">
             <span class="mr-2">Starta Ditt Projekt</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -588,11 +594,7 @@
           </p>
         </div>
 
-        <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/stefan-245/30min?primary_color=12b981"
-          style="min-width:320px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        <!-- Calendly inline widget end -->
+        <!-- Calendly inline widget removed as per instruction to use popup -->
       </div>
     </section>
 
