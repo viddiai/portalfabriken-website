@@ -1152,7 +1152,7 @@
                 Kom ihåg: Varje kapitel avslutas med "3 saker du kan göra imorgon" – konkreta åtgärder som ger omedelbar effekt.
               </span>
             </div>
-            <form action="https://formspree.io/f/mzddpzqo" method="POST" class="flex flex-col sm:flex-row gap-4">
+            <form id="guide-form" action="https://formspree.io/f/mzddpzqo" method="POST" class="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
                 name="email"
@@ -1323,6 +1323,47 @@
   </style>
 
   <script>
+    // Form submission handler - AJAX with manual redirect
+    document.addEventListener('DOMContentLoaded', function() {
+      const forms = document.querySelectorAll('#guide-form, #exit-intent-form');
+
+      forms.forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+          const button = form.querySelector('button[type="submit"]');
+          const originalText = button.textContent;
+
+          // Show loading state
+          button.textContent = 'Skickar...';
+          button.disabled = true;
+
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+          .then(function(response) {
+            if (response.ok) {
+              // Redirect to thank you page
+              window.location.href = '/tack.html';
+            } else {
+              throw new Error('Form submission failed');
+            }
+          })
+          .catch(function(error) {
+            console.error('Error:', error);
+            button.textContent = originalText;
+            button.disabled = false;
+            alert('Något gick fel. Försök igen.');
+          });
+        });
+      });
+    });
+
     // Exit Intent Popup - Shows only once per session
     (function() {
       const STORAGE_KEY = 'exitIntentShown';
